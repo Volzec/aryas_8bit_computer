@@ -1,0 +1,14 @@
+//this is the text program that will be compiled into assembly, use // to make a comment
+//loadd = load direct
+//loadi = load indirect
+//addf = add floating point
+
+loadd reg0 42
+loadd reg1 42
+loadd reg2 43
+loadi reg5 13
+add reg11 reg1 reg2
+out reg3
+store reg3 176
+move reg1 reg6 
+halt

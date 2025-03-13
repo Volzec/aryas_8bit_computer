@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MSc Project Background Report Template
+% Prof. Roger K. Moore
+% University of Sheffield
+% 22 March 2017
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[11pt,oneside]{book}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{setspace}
+\usepackage[toc,page]{appendix}
+\usepackage[none]{hyphenat} % turn hyphenation off by default
+\usepackage{graphicx}
+
+\begin{document}
+
+\frontmatter
+
+\begin{titlepage}
+
+% You need to edit the details here
+
+\begin{center}
+\includegraphics[width=5cm]{images/UOSLogo_Portrait_Violet_RGB.png}\\[2cm]
+\linespread{1.2}\huge {\bfseries Project title}\\[2cm]
+\linespread{1}
+{\Large Your name}\\[1cm]
+{\large \emph{Supervisor:} Supervisor name}\\[1cm]
+\large \emph{A report submitted in fulfilment of the requirements}\\ \emph{for the degree of} your degree (e.g. BSc in Computer Science)\\[0.3cm] 
+\textit{in the}\\[0.3cm]
+School of Computer Science\\[2cm]
+\today
+\end{center}
+
+\end{titlepage}
+
+% -------------------------------------------------------------------
+% Declaration
+% -------------------------------------------------------------------
+
+\newpage
+\chapter*{\Large Declaration}
+
+\setstretch{1.1} % set the line spacing differently if you wish, but this looks good to me. 
+
+All sentences or passages quoted in this report from other people's work have been specifically acknowledged by clear cross-referencing to author, work and page(s). Any illustrations that are not the work of the author of this report have been used with the explicit permission of the originator and are specifically acknowledged. I understand that failure to do this amounts to plagiarism and will be considered grounds for failure in this project and the degree examination as a whole.\\[1cm]
+
+\noindent Name:\\[1mm]
+\rule[1em]{25em}{0.5pt}
+
+\noindent Signature:\\[1mm]
+\rule[1em]{25em}{0.5pt}
+
+\noindent Date:\\[1mm]
+\rule[1em]{25em}{0.5pt}
+
+% -------------------------------------------------------------------
+% Abstract
+% -------------------------------------------------------------------
+
+\input{chapters/abstract.tex}
+
+% -------------------------------------------------------------------
+% TOC etc
+% -------------------------------------------------------------------
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\setstretch{1.1} 
+
+\mainmatter
+
+\input{chapters/chapter1.tex}
+\input{chapters/chapter2.tex}
+\input{chapters/chapter3.tex}
+\input{chapters/chapter4.tex}
+\input{chapters/chapter5.tex}
+
+\bibliographystyle{acm} 
+\bibliography{mybibliography} 
+
+\begin{appendices}
+\input{chapters/appendixA.tex}
+\input{chapters/appendixB.tex}
+\end{appendices}
+
+\end{document}
