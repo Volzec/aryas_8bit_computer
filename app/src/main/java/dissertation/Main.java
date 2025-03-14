@@ -89,48 +89,4 @@ public class Main {
         }
         return program;
     }
-
-    //checking the hash of compiled_program.txt to ensure it has not changed
-    /*public static boolean checkHashChanged(String[] textprogram) {
-        int hash = Compiler.doHash(textprogram);
-        try (BufferedReader br = new BufferedReader(new FileReader("app/src/main/java/dissertation/programs/compiled_program.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.startsWith("*")) {
-                    int fileHash = Integer.parseInt(line.substring(1));
-                    return fileHash == hash;
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Error");
-            e.printStackTrace();
-        }
-                return false;
-    }
-
-    //loads the compiled code
-    public static int[] loadProgram (){
-        String filename = "app/src/main/java/dissertation/programs/compiled_program.txt";
-        List<Integer> programList = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                // Skip lines that start with // or are empty
-                if (line.trim().isEmpty() || line.trim().startsWith("*")) {
-                    continue;
-                }
-                //add a 0x to every line
-                programList.add(Integer.parseInt(line, 16));
-            }
-            int[] program = new int[programList.size()];
-                for (int i = 0; i < programList.size(); i++) {
-                    program[i] = programList.get(i);
-                }
-            return program;
-        } catch (IOException e) {
-            System.err.println("Error reading program file: " + filename);
-            e.printStackTrace();
-        }
-        return null;
-    }*/
 }

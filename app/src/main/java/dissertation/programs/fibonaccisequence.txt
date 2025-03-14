@@ -1,0 +1,26 @@
+//this is a test using the fibonnaci sequence
+
+loadi reg1 00  // F(0) = 0
+loadi reg2 01  // F(1) = 1
+loadi reg3 0A  // Loop counter (N = 10)
+loadi reg4 00  // Temporary register
+loadi reg5 00  // Always 0 (for checking)
+loadi reg7 FF  // Load -1 into reg6 for decrementing
+
+start:
+    out reg1       // Print F(n)
+
+    move reg2 reg6  // Save F(n-1) into reg6
+    add reg4 reg1 reg2  // reg3 = reg0 + reg1 (F(n-2) + F(n-1))
+
+    move reg6 reg1  // Shift F(n-1) → F(n-2)
+    move reg4 reg2  // Store new Fibonacci number in reg2 (F(n) → F(n-1))
+
+    add reg3 reg3 reg7  // Decrement loop counter
+
+    jump reg3 end  // If counter == 0, exit loop
+
+    jump reg5 start  // Force jump back (only if reg5 == reg0, which it is)
+
+end:
+    halt  // Stop execution

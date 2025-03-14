@@ -10,6 +10,7 @@ public class BrookshearMachine {
         instructionMemory = new Memory();
         dataMemory = new Memory();
         registers = new Registers();
+        pc = 0;
     }
 
     public Memory GetDataMemory() {
@@ -36,7 +37,6 @@ public class BrookshearMachine {
     }
 
     public void execute() {
-        int pc = 0; // Program counter
         while (pc < 256) {
             Byte pcByte = new Byte();
             pcByte.HexToByte(pc);
@@ -116,7 +116,7 @@ private boolean DecodeAndExecute(Byte opcode, Byte operand) {
             break;
         case 0xB: // JUMP
             if (registers.Get(0).ByteToHex() == registers.Get(reg).ByteToHex()) {
-                pc = registers.Get(reg).ByteToHex(); // Set the program counter to the value in the register
+                pc = operand.ByteToHex(); // Set the program counter to the value in the operand
                 return true; // Continue execution
             }
             break;

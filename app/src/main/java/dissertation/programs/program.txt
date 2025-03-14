@@ -7,7 +7,7 @@ loadd reg0 42
 loadd reg1 42
 loadd reg2 43
 loadi reg5 13
-add reg11 reg1 reg2
+add reg3 reg1 reg2
 out reg3
 store reg3 176
 move reg1 reg6 
