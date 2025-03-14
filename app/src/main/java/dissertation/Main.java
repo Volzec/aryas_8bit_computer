@@ -32,21 +32,22 @@ public class Main {
         initializeMemory(machine);
 
         //the file path
-        String filename = "app/src/main/java/disertation/programs/program.txt";
+        String filename = "app/src/main/java/dissertation/programs/program.txt";
 
         // Read the program from the file
         String[] textprogram = readProgramFromFile(filename);
 
         // check to see if the hash of the program has changed, if it has then recompile, if not then load the program
         int[] program = null;
-        if (checkHashChanged(textprogram)){
+        /*if (checkHashChanged(textprogram)){
             program = loadProgram();
         }
         else{
             // Load send the program to compiler
-            Compiler compiler = new Compiler();
-            program = compiler.compileProgram(textprogram);
-        }
+            program = Compiler.compileToBrookshear(textprogram);
+        }*/
+
+        program = Compiler.compileToBrookshear(textprogram);
 
         // Load the program into memory
         machine.LoadProgram(program);
@@ -58,7 +59,7 @@ public class Main {
         machine.execute();
 
         // Print memory contents after execution
-        //machine.printMemory();
+        machine.printMemory();
 
         //machine.GetDataMemory().Get(HexToByte(0x2A)).PrintByte();
     }
@@ -98,7 +99,7 @@ public class Main {
     }
 
     //checking the hash of compiled_program.txt to ensure it has not changed
-    public static boolean checkHashChanged(String[] textprogram) {
+    /*public static boolean checkHashChanged(String[] textprogram) {
         int hash = Compiler.doHash(textprogram);
         try (BufferedReader br = new BufferedReader(new FileReader("app/src/main/java/disertation/programs/compiled_program.txt"))) {
             String line;
@@ -139,5 +140,5 @@ public class Main {
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 }

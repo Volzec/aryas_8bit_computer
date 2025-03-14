@@ -1,7 +1,5 @@
 package disertation;
 
-import org.checkerframework.checker.units.qual.s;
-
 public class BrookshearMachine {
     private Memory dataMemory;
     private Memory instructionMemory;
@@ -45,7 +43,7 @@ public class BrookshearMachine {
             Byte opcode = instructionMemory.Get(pcByte);
             Byte operand = dataMemory.Get(pcByte);
             pc = pc + 1;
-            System.out.println("PC: " + (pc - 1) + ", Instruction: 0x" + Integer.toHexString(opcode.ByteToHex()).toUpperCase() + Integer.toHexString(operand.ByteToHex()).toUpperCase());
+            System.out.println("PC: " + (pc - 1) + ", Instruction: 0x" + String.format("%02X", opcode.ByteToHex()).toUpperCase() + String.format("%02X", operand.ByteToHex()).toUpperCase());
             if (!DecodeAndExecute(opcode, operand)) {
                 break; // Stop execution if DecodeAndExecute returns false
             }
@@ -69,7 +67,7 @@ private boolean DecodeAndExecute(Byte opcode, Byte operand) {
     System.out.println("Instruction: 0x" + Integer.toHexString(instruction).toUpperCase() + 
                        ", Opcode: 0x" + Integer.toHexString(opcodeHex).toUpperCase() + 
                        ", Reg1: " + reg + 
-                       ", Operand: 0x" + Integer.toHexString(operandHex).toUpperCase());
+                       ", Operand: 0x" + String.format("%02X", operandHex).toUpperCase());
 
     switch (opcodeHex) {
         case 0x1: // LOAD REGISTER WITH CONTENTS FROM THE ADDRESS IN THE MEMORY, [address]

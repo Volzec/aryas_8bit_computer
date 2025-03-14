@@ -16,7 +16,6 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "disertation.Main",
-            "projectName": "${workspaceFolder}"
         }
     ]
 }
