@@ -15,7 +15,7 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "disertation.Main",
+            "mainClass": "dissertation.Main",
         }
     ]
 }

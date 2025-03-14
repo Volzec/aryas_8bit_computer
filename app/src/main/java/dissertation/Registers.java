@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 public class Registers {
     private Byte[] registers = new Byte[16]; // 16 general-purpose registers

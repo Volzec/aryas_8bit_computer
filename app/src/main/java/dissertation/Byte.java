@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 public class Byte {
     private boolean[] bits = new boolean[8];

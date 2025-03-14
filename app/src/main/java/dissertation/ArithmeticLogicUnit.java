@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 public class ArithmeticLogicUnit {
     public static Byte and(Byte register1, Byte register2) {

@@ -210,7 +210,7 @@ DEFAULT_JVM_OPTS=""
 
 set -- \
         -classpath "$CLASSPATH" \
-        disertation.App \
+        dissertation.App \
         "$@"
 
 # Stop when "xargs" is not available.

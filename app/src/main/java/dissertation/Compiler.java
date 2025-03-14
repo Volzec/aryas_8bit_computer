@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -281,7 +281,7 @@ class Compiler {
 
     // Method to save the compiled program to a file
     private void saveCompiledProgramToFile(int[] program, String filename, int programHash) {
-        File file = new File("app/src/main/java/disertation/programs", filename);
+        File file = new File("app/src/main/java/dissertation/programs", filename);
         machineCode(program);
         try {
             if (!file.exists()) {

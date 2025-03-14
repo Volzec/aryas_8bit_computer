@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 public class BrookshearMachine {
     private Memory dataMemory;

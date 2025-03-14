@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 public class Memory {
     private Byte[] memory = new Byte[256]; // 256 memory locations

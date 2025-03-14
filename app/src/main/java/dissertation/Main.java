@@ -1,4 +1,4 @@
-package disertation;
+package dissertation;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -101,7 +101,7 @@ public class Main {
     //checking the hash of compiled_program.txt to ensure it has not changed
     /*public static boolean checkHashChanged(String[] textprogram) {
         int hash = Compiler.doHash(textprogram);
-        try (BufferedReader br = new BufferedReader(new FileReader("app/src/main/java/disertation/programs/compiled_program.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("app/src/main/java/dissertation/programs/compiled_program.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.startsWith("*")) {
@@ -118,7 +118,7 @@ public class Main {
 
     //loads the compiled code
     public static int[] loadProgram (){
-        String filename = "app/src/main/java/disertation/programs/compiled_program.txt";
+        String filename = "app/src/main/java/dissertation/programs/compiled_program.txt";
         List<Integer> programList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
