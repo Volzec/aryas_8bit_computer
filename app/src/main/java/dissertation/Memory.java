@@ -23,7 +23,7 @@ public class Memory {
         System.out.println("Memory contents:");
         for (int i = 0; i < memory.length; i++) {
             if (!memory[i].IsEmpty()) {
-                System.out.println("0x" + Integer.toHexString(i).toUpperCase() + ": 0x" + Integer.toHexString(memory[i].ByteToHex()).toUpperCase());
+                System.out.println("0x" + String.format("%02X", i) + ": 0x" + String.format("%02X", memory[i].ByteToHex()));
             }
         }
     }

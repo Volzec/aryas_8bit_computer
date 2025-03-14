@@ -38,28 +38,20 @@ public class Main {
         String[] textprogram = readProgramFromFile(filename);
 
         // check to see if the hash of the program has changed, if it has then recompile, if not then load the program
-        int[] program = null;
-        /*if (checkHashChanged(textprogram)){
-            program = loadProgram();
-        }
-        else{
-            // Load send the program to compiler
-            program = Compiler.compileToBrookshear(textprogram);
-        }*/
 
-        program = Compiler.compileToBrookshear(textprogram);
+        int[] program = Compiler.compileToBrookshear(textprogram);
 
         // Load the program into memory
         machine.LoadProgram(program);
 
         // Print memory contents before execution
-        machine.printMemory();
+        //machine.printMemory();
 
         // Execute the program
         machine.execute();
 
         // Print memory contents after execution
-        machine.printMemory();
+        //machine.printMemory();
 
         //machine.GetDataMemory().Get(HexToByte(0x2A)).PrintByte();
     }
