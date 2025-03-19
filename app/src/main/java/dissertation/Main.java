@@ -4,10 +4,21 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+import javafx.application.Application;
+
+public class Main extends Application {
     /* ALL CURRENT OPCODES
     0x1: LOAD DIRECT
     0x2: LOAD INDIRECT
@@ -25,14 +36,17 @@ public class Main {
     format for instructions: 0x[opcode(0-F)][register1][operand(00-FF)]
     */
 
-    public static void main(String[] args) {
+    public static void BrookshearStart() {
+        System.out.println("Starting the Brookshear Machine");
+
         BrookshearMachine machine = new BrookshearMachine();
         
         // Initialize memory locations with values
         initializeMemory(machine);
 
         //the file path
-        String filename = "app/src/main/java/dissertation/programs/program.txt";
+        
+        String filename = "/dissertation/programs/program.txt";
 
         // Read the program from the file
         String[] textprogram = readProgramFromFile(filename);
@@ -69,24 +83,37 @@ public class Main {
 
     private static String[] readProgramFromFile(String filename) {
         List<String> programList = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        // Use getResourceAsStream so it loads the file from the classpath
+        try (InputStream in = Main.class.getResourceAsStream(filename);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
             String line;
             while ((line = br.readLine()) != null) {
-                // Skip lines that start with // or are empty
                 if (line.trim().isEmpty() || line.trim().startsWith("//")) {
                     continue;
                 }
                 programList.add(line);
             }
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             System.err.println("Error reading program file: " + filename);
             e.printStackTrace();
         }
-        // Convert the list to an array
         String[] program = new String[programList.size()];
         for (int i = 0; i < programList.size(); i++) {
             program[i] = programList.get(i);
         }
         return program;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        URL resourceUrl = getClass().getResource("/dissertation/gui/MainView.fxml");
+        Parent root = FXMLLoader.load(resourceUrl);
+        primaryStage.setTitle("JavaFX GUI Application");
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

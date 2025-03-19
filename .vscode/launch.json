@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
 
+
         {
             "type": "java",
             "name": "Current File",
@@ -15,7 +16,14 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "dissertation.Main"
+        },
+        {
+            "type": "java",
+            "name": "Launch via Gradle",
+            "request": "launch",
             "mainClass": "dissertation.Main",
+            "preLaunchTask": "gradle run"
         }
     ]
 }

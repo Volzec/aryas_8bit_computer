@@ -2,7 +2,7 @@ package dissertation;
 
 public class Registers {
     private Byte[] registers = new Byte[16]; // 16 general-purpose registers
-    //private int out; // OUT register
+    //REG0 will always be 0 so that it can be used with the jump instructions
 
     public Registers() {
         // Initialize each element of the registers array with a new Byte object
