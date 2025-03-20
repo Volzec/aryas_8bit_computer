@@ -23,7 +23,7 @@ public class MainView {
     }
 
     private void handleActionButtonClick() {
-        Main.BrookshearStart();
+        //Main.BrookshearStart();
         titleLabel.setText("Running the Brookshear Machine!");
 
     }

@@ -1,8 +1,6 @@
 package dissertation;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -36,7 +34,7 @@ public class Main extends Application {
     format for instructions: 0x[opcode(0-F)][register1][operand(00-FF)]
     */
 
-    public static void BrookshearStart() {
+    public static BrookshearMachine BrookshearStart(String textProgram) {
         System.out.println("Starting the Brookshear Machine");
 
         BrookshearMachine machine = new BrookshearMachine();
@@ -44,19 +42,15 @@ public class Main extends Application {
         // Initialize memory locations with values
         initializeMemory(machine);
 
-        //the file path
-        
-        String filename = "/dissertation/programs/program.txt";
-
         // Read the program from the file
-        String[] textprogram = readProgramFromFile(filename);
+        String[] textprogram = formatProgram(textProgram);
 
         // check to see if the hash of the program has changed, if it has then recompile, if not then load the program
 
         int[] program = Compiler.compileToBrookshear(textprogram);
 
         // Load the program into memory
-        machine.LoadProgram(program);
+        machine.loadProgram(program);
 
         // Print memory contents before execution
         //machine.printMemory();
@@ -68,20 +62,25 @@ public class Main extends Application {
         //machine.printMemory();
 
         //machine.GetDataMemory().Get(HexToByte(0x2A)).PrintByte();
+        return machine;
     }
 
     private static void initializeMemory(BrookshearMachine machine) {
-        machine.GetDataMemory().Set(HexToByte(0x2A), HexToByte(42)); // Example value
-        machine.GetDataMemory().Set(HexToByte(0x2B), HexToByte(10));  // Example value
+        machine.getDataMemory().set(hexToByte(0x2A), hexToByte(42)); // Example value
+        machine.getDataMemory().set(hexToByte(0x2B), hexToByte(10));  // Example value
     }
 
-    private static Byte HexToByte(int hex) {
+    private static Byte hexToByte(int hex) {
         Byte b = new Byte();
-        b.HexToByte(hex);
+        b.hexToByte(hex);
         return b;
     }
 
-    private static String[] readProgramFromFile(String filename) {
+    private static int byteToHex(Byte b) {
+        return b.byteToHex();
+    }
+
+    /*private static String[] readProgramFromFile(String filename) {
         List<String> programList = new ArrayList<>();
         // Use getResourceAsStream so it loads the file from the classpath
         try (InputStream in = Main.class.getResourceAsStream(filename);
@@ -102,6 +101,10 @@ public class Main extends Application {
             program[i] = programList.get(i);
         }
         return program;
+    }*/
+
+    private static String[] formatProgram(String program) {
+        return program.split("\n");
     }
 
     @Override
@@ -115,5 +118,17 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static String getFormattedMemoryValues(BrookshearMachine machine) {
+        StringBuilder sb = new StringBuilder();
+        // Let's assume machine.GetDataMemory() returns an array or list of Byte values.
+        for (int i = 0; i < machine.getDataMemory().size(); i++) {
+            sb.append("Address ").append(i)
+              .append(": ")
+              .append(byteToHex(machine.getDataMemory().get(hexToByte(i))))
+              .append("\n");
+        }
+        return sb.toString();
     }
 }

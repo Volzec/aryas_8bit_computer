@@ -131,7 +131,7 @@ public class Compiler {
     
     
     public static void saveToBinaryFile(int[] machineCode, String fileName) {
-        File programsDir = new File("app/src/main/java/dissertation/programs");
+        File programsDir = new File("src/main/resources/dissertation/programs");
         if (!programsDir.exists()) {
             programsDir.mkdirs(); // Create the programs directory if it doesn't exist
         }
@@ -170,7 +170,7 @@ public class Compiler {
     
     }
     public static void saveHash(String hash) {
-        File programsDir = new File("app/src/main/java/dissertation/programs");
+        File programsDir = new File("src/main/resources/dissertation/programs");
         if (!programsDir.exists()) {
             programsDir.mkdirs(); // Create the programs directory if it doesn't exist
         }
@@ -183,7 +183,7 @@ public class Compiler {
     }
 
     public static String loadSavedHash() {
-        File programsDir = new File("app/src/main/java/dissertation/programs");
+        File programsDir = new File("src/main/resources/dissertation/programs");
         if (!programsDir.exists()) {
             programsDir.mkdirs(); // Create the programs directory if it doesn't exist
         }
@@ -210,7 +210,7 @@ public class Compiler {
     }
 
     public static int[] loadMachineCode(String fileName) {
-        File programsDir = new File("app/src/main/java/dissertation/programs");
+        File programsDir = new File("src/main/resources/dissertation/programs");
         if (!programsDir.exists()) {
             programsDir.mkdirs(); // Create the programs directory if it doesn't exist
         }

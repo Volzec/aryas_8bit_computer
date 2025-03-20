@@ -11,7 +11,7 @@ public class Registers {
         }
     }
 
-    public Byte Get(int index) {
+    public Byte get(int index) {
         if (index < 0 || index >= registers.length) {
             throw new IndexOutOfBoundsException("Invalid register index: " + index);
         }
@@ -19,14 +19,14 @@ public class Registers {
         return registers[index];
     }
 
-    public void Set(int index, Byte value) {
+    public void set(int index, Byte value) {
         if (index < 0 || index >= registers.length) {
             throw new IndexOutOfBoundsException("Invalid register index: " + index);
         }
         registers[index] = value;
     }
 
-    public Byte GetData(int register) { //needs to get the byte information
+    public Byte getData(int register) { //needs to get the byte information
         return registers[register];
     }
 }
