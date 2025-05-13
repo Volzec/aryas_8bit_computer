@@ -1,0 +1,8 @@
+.code-area .opcode       { -fx-fill: purple;    fill: purple;    -fx-font-weight: bold; font-weight: bold; }
+.code-area .label        { -fx-fill: darkred;   fill: darkred;   -fx-font-weight: bold; font-weight: bold; }
+.code-area .register     { -fx-fill: darkgreen; fill: darkgreen; }
+.code-area .number       { -fx-fill: darkblue;  fill: darkblue;  }
+.code-area .comment      { -fx-fill: gray;      fill: gray;      -fx-font-style: italic; font-style: italic; }
+.code-area .jump_target  { -fx-fill: darkred;   fill: darkred;   -fx-font-weight: bold; font-weight: bold; }
+.code-area .placeholder  { -fx-fill: limegreen; fill: limegreen; }
+.code-area .import       { -fx-fill: rgb(209, 136, 0); fill: rgb(209, 136, 0); -fx-font-weight: bold; font-weight: bold; }

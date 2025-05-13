@@ -4,12 +4,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<VBox fx:controller="dissertation.gui.controllers.MainController" xmlns:fx="http://javafx.com/fxml" spacing="10" alignment="CENTER">
-    <Label fx:id="titleLabel" text="Arya's Brookshear Machine"/>
-    <TextArea fx:id="outputText" prefRowCount="15" prefColumnCount="30" editable="false"/>
-    <Button fx:id="actionButton" text="Run Machine"/>
-    <Button fx:id="newProgramButton" text="New program"/>
-    <Button fx:id="loadProgramButton" text="Load/Edit program"/>
-    <Button fx:id="exitButton" text="Exit"/>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dissertation.gui.controllers.MainController">
+    <Label fx:id="titleLabel" text="Arya's Brookshear Machine" />
+    <Button fx:id="actionButton" text="Initialise Machine" />
+    <Button fx:id="viewInstructionsButton" text="View Instructions" />
+    <Button fx:id="newProgramButton" text="New program" />
+    <Button fx:id="loadProgramButton" text="Load/Edit program" />
+    <Button fx:id="resetProgramButton" text="Reset program" />
+    <Button fx:id="createMacroButton" text="Create Macro" />
+    <Button fx:id="viewMacrosButton" text="View Macros" />
+    <Button fx:id="exitButton" text="Exit" />
+   <Label text="Machine Output" />
+   <TextFlow fx:id="outputText"
+            layoutX="20" layoutY="200"
+            prefWidth="600" prefHeight="200"
+            textAlignment="CENTER">
+    <Text text=""/>
+  </TextFlow>
 </VBox>

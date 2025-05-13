@@ -1,0 +1,20 @@
+mul: Multiply two registers into dest{
+loadi reg12 0
+move regy reg14
+loadi reg13 -1
+mul_loop:
+add reg12 regx reg12
+add reg14 reg14 reg13
+jump reg14 mul_end
+jump reg0 mul_loop
+mul_end:
+move reg12 regz
+}
+sub: Subtracts second operand from first{
+loadi reg12 -1
+xor   reg12 reg12 regy
+loadi reg13 1
+add   reg12 reg12 reg13
+
+add   regz regx reg12
+}

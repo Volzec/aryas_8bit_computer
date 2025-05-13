@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="dissertation.gui.controllers.PipelineViewController"
+           orientation="HORIZONTAL"
+           prefWidth="800" prefHeight="500">
+  <items>
+    <VBox spacing="4" SplitPane.resizableWithParent="false" prefWidth="200">
+      <Label text="Steps Done" />
+      <ListView fx:id="stepList" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <VBox spacing="4" VBox.vgrow="ALWAYS">
+      <Label text="Bus Values" />
+      <TableView fx:id="busTable" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colName"  text="Bus Name" prefWidth="200"/>
+          <TableColumn fx:id="colValue" text="Value"    prefWidth="200"/>
+        </columns>
+      </TableView>
+      <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Step"   fx:id="stepButton"/>
+        <Button text="Diagram" fx:id="diagramButton"/>
+        <Button text="Close"  fx:id="closeButton"/>
+      </HBox>
+    </VBox>
+  </items>
+</SplitPane>

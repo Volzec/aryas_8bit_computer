@@ -1,0 +1,24 @@
+//this is a test using the fibonnaci sequence
+
+loadi reg1 0   //F(0)=0
+loadi reg2 1   //F(1)=1
+loadi reg3 9   //loop counter N=10
+loadi reg5 0   //always-zero for unconditional jump
+loadi reg6 -1   //-1 for decrement
+
+start:
+    out reg1        // print F(n)
+
+    //move reg2 reg7  save F(n-1) into reg7
+    add  reg4 reg1 reg2  //reg4 = F(n-2) + F(n-1)
+
+    move reg2 reg1  //shift: new F(n-2) ← old F(n-1)
+    move reg4 reg2  //shift: new F(n-1) ← F(n)
+
+    add  reg3 reg3 reg6  // eg3 = counter--  
+    jump reg3 end        //if counter == 0, exit
+    jump reg5 start      //else go back to start
+
+end:
+    out reg2
+    halt

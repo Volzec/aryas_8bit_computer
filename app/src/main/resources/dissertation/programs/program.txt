@@ -1,0 +1,5 @@
+loadi reg1 5
+loadi reg2 10
+add reg3 reg1 reg2
+out reg3
+halt

@@ -14,14 +14,21 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.google.guava:guava:32.1.2-jre'
+
+    // JavaFX modules
     implementation "org.openjfx:javafx-base:21:${platform}"
     implementation "org.openjfx:javafx-graphics:21:${platform}"
     implementation "org.openjfx:javafx-controls:21:${platform}"
     implementation "org.openjfx:javafx-fxml:21:${platform}"
+
+    // RichTextFX for syntax‐highlighting CodeArea
+    implementation "org.fxmisc.richtext:richtextfx:0.10.9"
+    implementation "org.fxmisc.flowless:flowless:0.7.4"
+    implementation "org.reactfx:reactfx:2.0-M5"
 }
 
 java {
-    modularity.inferModulePath.set(true)
+    modularity.inferModulePath.set(false)
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }

@@ -3,28 +3,38 @@ package dissertation;
 public class Byte {
     private boolean[] bits = new boolean[8];
 
+    public Byte() {
+        // Default to 0 (all bits false)
+    }
+
+    public Byte(int hex) {
+        for (int i = 0; i < 8; i++) {
+            bits[i] = (hex & (1 << (7 - i))) != 0;
+        }
+    }
+
     public void setBit(int index, boolean value) {
         bits[index] = value;
     }
+
     public boolean getBit(int index) {
         return bits[index];
     }
 
-    public int byteToHex (){
-        int decimal = 0;
+    public int byteToHex() {
+        int value = 0;
         for (int i = 0; i < 8; i++) {
-            if (bits[i]) {
-                decimal += Math.pow(2, 7 - i);
-            }
+            value = (value << 1) | (bits[i] ? 1 : 0);
         }
-        return decimal;
+        return value;
     }
 
-    public Byte hexToByte (int hex) {
-        for (int i = 0; i < 8; i++) {
-            bits[i] = (hex & (1 << (7 - i))) != 0;
-        }
-        return this;
+    public int byteToHexString() {
+        return Integer.parseInt(String.format("%02X", byteToHex()), 16);
+    }
+
+    public static Byte hexToByte(int hex) {
+        return new Byte(hex);
     }
 
     public void printByte() {
@@ -34,12 +44,20 @@ public class Byte {
         System.out.println();
     }
 
-    public Boolean isEmpty() {
+    public boolean isEmpty() {
         for (int i = 0; i < 8; i++) {
             if (bits[i]) {
                 return false;
             }
         }
         return true;
+    }
+
+    public int byteToDecimal() {
+        int value = 0;
+        for (int i = 0; i < 8; i++) {
+            value = (value << 1) | (bits[i] ? 1 : 0);
+        }
+        return value;
     }
 }

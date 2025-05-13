@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dissertation.gui.controllers.CpuDiagramController">
+  <children>
+    <AnchorPane maxHeight="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER" layoutX="37.0" layoutY="58.0" prefHeight="433.0" prefWidth="112.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="66.0" prefWidth="112.0" text="Fetch">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox fx:id="ifid" layoutX="195.0" layoutY="85.0" prefHeight="397.0" prefWidth="30.0" style="-fx-background-color: white; -fx-border-color: blue; -fx-border-width: 2;" />
+            <Label layoutX="197.0" layoutY="68.0" text="IF/ID" />
+            <Line fx:id="inDataBus2" endX="-192.0" endY="106.0" layoutX="387.0" layoutY="325.0" startX="-254.0" startY="106.0" />
+            <Line fx:id="inAddrBus1" endX="-75.0" endY="11.0" layoutX="195.0" layoutY="533.0" startX="-75.0" startY="-59.0" />
+            <HBox alignment="CENTER" layoutX="58.0" layoutY="545.0" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="34.0" prefWidth="202.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="197.0" style="-fx-font-size: 18px;" text="Instruction Memory" textAlignment="CENTER" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="258.0" layoutY="41.0" prefHeight="455.0" prefWidth="112.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="331.0" prefWidth="108.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="112.0" text="Decode">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="inBus" endX="-207.0" endY="106.0" layoutX="465.0" layoutY="1.0" startX="-240.0" startY="106.0" />
+            <HBox fx:id="idex" layoutX="437.0" layoutY="85.0" prefHeight="397.0" prefWidth="30.0" style="-fx-background-color: white; -fx-border-color: blue; -fx-border-width: 2;" />
+            <Label layoutX="437.0" layoutY="68.0" text="ID/EX" />
+            <Line fx:id="pcBus" endX="-133.0" endY="-190.0" layoutX="328.0" layoutY="472.0" startX="-197.0" startY="-190.0" />
+            <Label layoutX="55.0" layoutY="521.0" text="In Addr Bus" />
+            <Label layoutX="133.0" layoutY="414.0" text="In Data Bus" />
+            <Line endX="-202.0" endY="-96.0" layoutX="295.0" layoutY="293.0" startX="-202.0" startY="-47.0" />
+            <Line endX="-267.0" endY="-102.0" layoutX="360.0" layoutY="419.0" startX="-267.0" startY="-16.0" />
+            <Line fx:id="branchbus4" endX="-261.0" endY="-204.0" layoutX="314.0" layoutY="360.0" startX="-298.0" startY="-204.0" />
+            <HBox alignment="CENTER" layoutX="497.0" layoutY="39.0" prefHeight="123.0" prefWidth="174.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="115.0" prefWidth="170.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="98.0" text="Reg File">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox alignment="BOTTOM_LEFT" fillHeight="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="71.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+                           <children>
+                              <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="69.0" prefWidth="78.0" text="16 General Purpose Registers" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </TextFlow>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="ctrlSgnl" endX="-99.0" endY="56.0" layoutX="536.0" layoutY="213.0" startX="-182.0" startY="56.0" />
+            <Line fx:id="ALUin" endX="-264.0" endY="97.0" layoutX="701.0" layoutY="300.0" startX="-347.0" startY="97.0" />
+            <Line endX="-375.0" endY="-9.0" layoutX="689.0" layoutY="377.0" startX="-375.0" startY="-83.0" />
+            <Line endX="-463.0" endY="122.0" layoutX="777.0" layoutY="122.0" startX="-463.0" startY="15.0" />
+            <HBox alignment="CENTER" layoutX="497.0" layoutY="176.0" prefHeight="321.0" prefWidth="174.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="219.0" prefWidth="170.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="112.0" text="Execute">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="registerBus2" endX="-249.0" endY="-43.0" layoutX="833.0" layoutY="213.0" startX="-287.0" startY="-43.0" />
+            <Line fx:id="registerBus3" endX="55.0" endY="-158.0" layoutX="490.0" layoutY="328.0" startX="55.0" startY="-93.0" />
+            <Polygon fill="#86c1f8" layoutX="532.0" layoutY="230.0" points="-24.0, 40.0, 50.0, 40.0, 76.0, -7.0, -50.0, -7.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#86c1f8" layoutX="609.0" layoutY="230.0" points="-24.0, 40.0, 50.0, 40.0, 76.0, -7.0, -50.0, -7.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE" />
+            <Line fx:id="registerBus4" endX="44.5" endY="-121.0" layoutX="501.0" layoutY="331.0" startX="120.0" startY="-121.0" />
+            <Line fx:id="registerBus5" endX="134.0" endY="-144.5" layoutX="487.0" layoutY="355.0" startX="134.0" startY="-120.25" />
+            <Label layoutX="530.0" layoutY="237.0" text="mux1" />
+            <Label layoutX="606.0" layoutY="237.0" text="mux1" />
+            <HBox layoutX="527.0" layoutY="277.0" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: #a6a6a6; -fx-border-color: green; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="72.0" prefWidth="226.0">
+                     <children>
+                        <Label text=" OP 1" />
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="               OP 2" />
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="111.0" text="ALU">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text=" Zero                 Out" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="op2" endX="-190.0" endY="-17.0" layoutX="812.0" layoutY="294.0" startX="-190.0" startY="-35.75" />
+            <Line fx:id="op1" endX="-190.0" endY="-17.0" layoutX="736.0" layoutY="294.0" startX="-190.0" startY="-35.75" />
+            <Line fx:id="registerBus1" endX="225.0" endY="-200.5" layoutX="359.0" layoutY="370.0" startX="225.0" startY="-221.0" />
+            <Line fx:id="ALUout1" endX="-161.0" endY="69.0" layoutX="785.0" layoutY="305.0" startX="-161.0" startY="42.0" />
+            <Line fx:id="ALUfunc" endX="-121.0" endY="56.0" layoutX="648.0" layoutY="256.0" startX="-182.0" startY="56.0" />
+            <Line fx:id="SRC1" endX="-91.0" endY="56.0" layoutX="611.0" layoutY="191.0" startX="-145.0" startY="56.0" />
+            <Line fx:id="immBus3" endX="-186.0" endY="73.0" layoutX="793.0" layoutY="161.0" startX="-186.0" startY="62.0" />
+            <Line fx:id="immBus" endX="-356.0" endY="68.0" layoutX="963.0" layoutY="155.0" startX="-496.0" startY="68.0" />
+            <Line fx:id="immBus2" endX="-186.0" endY="73.0" layoutX="716.0" layoutY="161.0" startX="-186.0" startY="62.0" />
+            <Line fx:id="SRC2_1" endX="-64.0" endY="56.0" layoutX="648.0" layoutY="211.0" startX="-181.0" startY="56.0" />
+            <Line fx:id="SRC2_2" endX="-73.0" endY="26.0" layoutX="657.0" layoutY="221.0" startX="-73.0" startY="45.5" />
+            <Line fx:id="SRC2_3" endX="-73.0" endY="46.0" layoutX="657.0" layoutY="201.0" startX="-60.0" startY="46.0" />
+            <Label layoutX="473.0" layoutY="204.0" text="Imm bus" />
+            <Label layoutX="475.0" layoutY="230.0" text="SRC 1" />
+            <Label layoutX="475.0" layoutY="250.0" text="SRC 2" />
+            <Label layoutX="474.0" layoutY="294.0" text="ALU Func" />
+            <Label layoutX="370.0" layoutY="252.0" text="CTRL Signals" />
+            <Line fx:id="ctrlSgnlThrough1" endX="-128.0" endY="97.0" layoutX="839.0" layoutY="341.0" startX="-372.0" startY="97.0" />
+            <Line fx:id="ALUout2" endX="-96.5" endY="58.0" layoutX="721.0" layoutY="316.0" startX="-17.0" startY="58.0" />
+            <HBox fx:id="exmem" layoutX="704.0" layoutY="85.0" prefHeight="397.0" prefWidth="30.0" style="-fx-background-color: white; -fx-border-color: blue; -fx-border-width: 2;" />
+            <Label layoutX="696.0" layoutY="68.0" text="EX/MEM" />
+            <Label layoutX="555.0" layoutY="420.0" text="CTRL Signals" />
+            <Line fx:id="destSgnlThrough1" endX="-134.0" endY="97.0" layoutX="838.0" layoutY="360.0" startX="-372.0" startY="97.0" />
+            <Label layoutX="563.0" layoutY="440.0" text="Dest Sgnl" />
+            <Line fx:id="ALUzero" endX="-161.0" endY="69.0" layoutX="705.0" layoutY="305.0" startX="-161.0" startY="42.0" />
+            <HBox alignment="BOTTOM_LEFT" fillHeight="false" layoutX="514.0" layoutY="368.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="1.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="27.0" prefWidth="78.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="78.0" text="Branch Unit" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="branchEn" endX="-197.0" endY="67.0" layoutX="711.0" layoutY="321.0" startX="-245.0" startY="67.0" />
+            <Line fx:id="branchbus1" endX="-267.0" endY="-102.0" layoutX="811.0" layoutY="511.0" startX="-267.0" startY="-2.0" />
+            <Line fx:id="branchbus2" endX="-134.0" endY="97.0" layoutX="678.0" layoutY="412.0" startX="-661.0" startY="97.0" />
+            <Line fx:id="branchbus3" endX="-671.0" endY="-266.5" layoutX="687.0" layoutY="422.0" startX="-671.0" startY="87.0" />
+            <Label layoutX="463.0" layoutY="371.0" text=" Brnch En" />
+            <Label layoutX="202.0" layoutY="490.0" text="Brnch Bus" />
+            <Line fx:id="regBThrough" endX="-6.0" endY="67.0" layoutX="711.0" layoutY="408.0" startX="-245.0" startY="67.0" />
+            <Label layoutX="569.0" layoutY="458.0" text="regBval" />
+            <Line fx:id="pcThrough" endX="-135.0" endY="97.0" layoutX="572.0" layoutY="351.0" startX="-347.0" startY="97.0" />
+            <Label layoutX="309.0" layoutY="432.0" text="PC" />
+            <HBox alignment="CENTER" layoutX="789.0" layoutY="42.0" prefHeight="455.0" prefWidth="112.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="331.0" prefWidth="108.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="112.0" text="Memory">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="1019.0" layoutY="451.0" prefHeight="138.0" prefWidth="164.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="134.0" prefWidth="158.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="158.0" text="Out" textAlignment="CENTER" />
+                        <TextArea fx:id="output" editable="false" prefHeight="103.0" prefWidth="135.0" style="-fx-font-size: 18px;" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="destSgnlThrough2" endX="-148.0" endY="97.0" layoutX="1106.0" layoutY="377.0" startX="-372.0" startY="97.0" />
+            <HBox fx:id="memwb" layoutX="958.0" layoutY="84.0" prefHeight="397.0" prefWidth="30.0" style="-fx-background-color: white; -fx-border-color: blue; -fx-border-width: 2;" />
+            <Line fx:id="ctrlSgnlThrough2" endX="-148.0" endY="97.0" layoutX="1107.0" layoutY="359.0" startX="-372.0" startY="97.0" />
+            <Label layoutX="815.0" layoutY="439.0" text="CTRL Signals" />
+            <Label layoutX="836.0" layoutY="457.0" text="Dest" />
+            <Label layoutX="154.0" layoutY="265.0" text="PC Bus" />
+            <Label layoutX="948.0" layoutY="68.0" text="MEM/WB" />
+            <Label layoutX="372.0" layoutY="379.0" text="ALU Inputs" />
+            <HBox alignment="CENTER" layoutX="806.0" layoutY="132.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="173.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" layoutY="100.0" prefHeight="172.0" prefWidth="78.0" text="Data Memory" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="ALUMEMthrough1" endX="-298.0" endY="97.0" layoutX="1104.0" layoutY="190.0" startX="-370.0" startY="97.0" />
+            <Label layoutX="738.0" layoutY="270.0" text="ALU Out" />
+            <Line fx:id="regBval" endX="-298.0" endY="97.0" layoutX="1104.0" layoutY="153.0" startX="-370.0" startY="97.0" />
+            <Label layoutX="742.0" layoutY="233.0" text="regBval" />
+            <Line fx:id="memRead" endX="-298.0" endY="97.0" layoutX="1104.0" layoutY="112.0" startX="-371.0" startY="97.0" />
+            <Label layoutX="734.0" layoutY="192.0" text="memRead" />
+            <Line fx:id="memWrite" endX="-298.0" endY="97.0" layoutX="1104.0" layoutY="61.0" startX="-370.0" startY="97.0" />
+            <Label layoutX="734.0" layoutY="140.0" text="memWrite" />
+            <Line fx:id="dataBus" endX="-298.0" endY="97.0" layoutX="1257.0" layoutY="112.0" startX="-371.0" startY="97.0" />
+            <Label layoutX="906.0" layoutY="194.0" text="Data Bus" />
+            <Line fx:id="ALUMEMthrough2" endX="-161.0" endY="69.0" layoutX="931.0" layoutY="246.0" startX="-161.0" startY="42.0" />
+            <Line fx:id="ALUMEMthrough3" endX="6.0" endY="56.0" layoutX="952.0" layoutY="259.0" startX="-181.0" startY="56.0" />
+            <HBox alignment="CENTER" layoutX="1050.0" layoutY="42.0" prefHeight="246.0" prefWidth="188.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="242.0" prefWidth="122.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="112.0" text="Write Back">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="ALUWB" endX="-273.199951171875" endY="97.0" layoutX="1359.0" layoutY="113.0" startX="-371.0" startY="97.0" />
+            <Label layoutX="993.0" layoutY="194.0" text="ALU Out" />
+            <Line fx:id="destSgnl" endX="-264.0" endY="97.0" layoutX="702.0" layoutY="318.0" startX="-347.0" startY="97.0" />
+            <Label layoutX="376.0" layoutY="400.0" text="Dest Sngl" />
+            <Label layoutX="225.0" layoutY="91.0" text="In Bus" />
+            <Polygon fill="#86c1f8" layoutX="1100.0" layoutY="168.0" points="-24.0, 40.0, 50.0, 40.0, 76.0, -7.0, -50.0, -7.0" rotate="-90.0" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" />
+            <Line fx:id="outputBus1" endX="-101.0" endY="58.0" layoutX="987.0" layoutY="202.0" startX="-64.5" startY="58.0" />
+            <Line fx:id="memData" endX="-274.199951171875" endY="97.0" layoutX="1359.0" layoutY="95.0" startX="-371.0" startY="97.0" />
+            <Label layoutX="990.0" layoutY="176.0" text="memData" />
+            <Line fx:id="memToReg1" endX="-243.0" endY="96.0" layoutX="1359.0" layoutY="160.0" startX="-371.0" startY="96.0" />
+            <Label layoutX="1093.0" layoutY="176.0" text="wbMux" />
+            <Line fx:id="memToReg2" endX="-161.0" endY="67.0" layoutX="1277.0" layoutY="189.0" startX="-161.0" startY="44.0" />
+            <Label layoutX="988.0" layoutY="239.0" text="memToReg Select" />
+            <Line fx:id="WBbus1" endX="530.0" endY="14.0" layoutX="726.0" layoutY="171.0" startX="497.0" startY="14.0" />
+            <Line fx:id="WBbus2" endX="-161.0" endY="70.0" layoutX="1417.0" layoutY="114.0" startX="-161.0" startY="-89.5" />
+            <Line fx:id="WBbus3" endX="-702.0" endY="-106.0" layoutX="1350.0" layoutY="131.0" startX="-93.5" startY="-106.0" />
+            <Line fx:id="WBbus4" endX="225.0" endY="-126.0" layoutX="422.0" layoutY="240.0" startX="225.0" startY="-215.0" />
+            <Line fx:id="WBbus5" endX="278.0" endY="-266.0" layoutX="369.0" layoutY="380.0" startX="255.0" startY="-266.0" />
+            <Line fx:id="outputBus2" endX="-74.0" endY="48.0" layoutX="997.0" layoutY="212.0" startX="-74.0" startY="308.5" />
+            <Label layoutX="905.0" layoutY="6.0" text="Write Back Bus" />
+            <Label layoutX="904.0" layoutY="244.0" text="Out Bus" />
+            <Line fx:id="outputBus3" endX="11.0" endY="298.0" layoutX="1008.0" layoutY="222.0" startX="-85.5" startY="299.0" />
+            <HBox alignment="CENTER" layoutX="52.0" layoutY="126.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="71.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="69.0" prefWidth="78.0" text="Branch or increment" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="52.0" layoutY="246.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="71.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="69.0" prefWidth="78.0" text="PC">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" fillHeight="false" layoutX="53.0" layoutY="403.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="71.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="69.0" prefWidth="78.0" text="Mem request" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" fillHeight="false" layoutX="274.0" layoutY="81.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="55.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="78.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="78.0" text="Hazzard Detect" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" fillHeight="false" layoutX="274.0" layoutY="244.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="78.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="48.0" prefWidth="78.0" text="Control Unit" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" fillHeight="false" layoutX="275.0" layoutY="368.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="80.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="309.0" prefWidth="110.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="78.0" text="Immd/Address &amp; SRC2 " textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="inAddrBus2" endX="34.0" endY="-5.0" layoutX="332.0" layoutY="526.0" startX="-212.5" startY="-5.0" />
+            <HBox alignment="CENTER" layoutX="366.0" layoutY="513.0" prefHeight="81.0" prefWidth="118.0" style="-fx-background-color: #d0f0c0; -fx-border-color: green; -fx-border-width: 2;">
+               <children>
+                  <TextFlow prefHeight="89.0" prefWidth="158.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="117.0" text="Instruction" textAlignment="CENTER" />
+                        <TextArea fx:id="instruction" editable="false" minHeight="-Infinity" prefHeight="49.0" prefWidth="95.0" style="-fx-font-size: 18px;" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="inDataBus1" endX="-75.0" endY="11.0" layoutX="141.0" layoutY="533.0" startX="-75.0" startY="-59.0" />
+            <Label layoutX="124.0" layoutY="521.0" text="In Data Bus" />
+            <HBox alignment="CENTER" layoutX="1164.0" layoutY="154.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="55.0" prefWidth="59.0" style="-fx-background-color: #a6a6a6; -fx-border-color: black; -fx-border-radius: 0;">
+               <children>
+                  <TextFlow prefHeight="0.0" prefWidth="71.0" textAlignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" layoutY="100.0" prefHeight="60.0" prefWidth="59.0" text="Reg Selector" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <Line fx:id="destSgnlWB1" endX="-164.0" endY="97.0" layoutX="1358.0" layoutY="218.0" startX="-371.0" startY="97.0" />
+            <Line fx:id="wbMuxOut" endX="502.0" endY="-107.0" layoutX="662.0" layoutY="292.0" startX="479.199951171875" startY="-107.0" />
+            <Line fx:id="destSgnlWB2" endX="-174.0" endY="87.5" layoutX="1368.0" layoutY="228.0" startX="-174.0" startY="-12.0" />
+            <Label layoutX="1033.0" layoutY="298.0" text="Destination Register" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

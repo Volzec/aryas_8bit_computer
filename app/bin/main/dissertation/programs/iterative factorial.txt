@@ -1,0 +1,13 @@
+//a factorial algorithm
+//goes through 8!
+loadi   reg1    8      // reg1 ← N (change 5 to whatever you like)
+loadi   reg2    1      // reg2 ← RESULT = 1
+loadi   reg3   -1      // reg3 ← –1 (for decrement)
+loop:   
+	jump    reg1    end    // if reg1 == 0 → END
+        mul     reg2    reg1   reg2   // RESULT ← RESULT * reg1
+        add     reg1    reg1   reg3   // reg1 ← reg1 + (–1)
+        jump    reg0    loop   // unconditional back to LOOP
+end: 
+out     reg2 // write RESULT to mem[0xFF]  
+halt                 // stop
