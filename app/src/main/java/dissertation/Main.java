@@ -65,12 +65,10 @@ public class Main extends Application {
         outBusChanges.add(new OutBusChange(0, lastOutBusValue));
         
         if (isHalted) {
-            //System.out.println("The CPU is already halted. Please reset the CPU to run a new program.");
             return;
         }
         else {
             for (int i = 0; i < 9999999; i++) {
-                //System.out.println("Tick: " + i);
                 cpu.loadProgram(programMemory);
                 cpu.autoTick();
                 //cpu.printRegisters();

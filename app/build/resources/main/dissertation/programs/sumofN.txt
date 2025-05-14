@@ -1,0 +1,16 @@
+import sub           // sub regz regx regy → regz = regx – regy
+loadi  reg1  25       // reg1 = N (loop counter)
+loadi  reg2  0       // reg2 = sum
+loadi  reg10 1       // 5 = constant 1
+
+sumLoop:
+	sub    reg9 reg1 reg10   // reg12 = reg1 – 1
+        jump   reg9 endSum       // if reg1==1, sub→0 → exit
+        add    reg2 reg2 reg1     // sum += reg1
+        sub    reg1 reg1 reg10    // reg1--
+        jump   reg0 sumLoop       // always loop back
+
+endSum:
+add    reg2 reg2 reg10 
+out    reg2               // print sum
+halt

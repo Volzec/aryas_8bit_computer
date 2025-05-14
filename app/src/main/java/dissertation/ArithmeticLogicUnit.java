@@ -105,12 +105,10 @@ public class ArithmeticLogicUnit {
                 break;
 
             case 0x5: // ROTR
-                System.out.println("ROTR: " + ua + " " + ub);
                 int sh   = ub & (WIDTH - 1);
                 result   = ((ua >>> sh) | (ua << (WIDTH - sh))) & MASK;
                 carryOut = false;
                 overflow = false;
-                System.out.println("ROTR result: " + result);
                 break;
 
             case 0x6: // FLOAT-ADD

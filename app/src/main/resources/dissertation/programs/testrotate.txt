@@ -1,7 +1,3 @@
-import sub
-
-loadi reg1 4
-loadi reg2 9
-sub reg5 reg2 reg1
-out reg5
+loadi reg1 20
+rotate reg1 2
 halt

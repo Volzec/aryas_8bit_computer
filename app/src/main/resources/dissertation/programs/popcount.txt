@@ -1,0 +1,22 @@
+import sub            // for reg5 = reg5 – 1
+import mul
+
+// popcount: count 1-bits in reg1 → reg2
+loadi   reg1  121
+loadi   reg2 16
+mul   reg2  reg1 reg2     // example input
+loadi   reg2    0     // accumulator
+loadi   reg4    1     // constant 1
+loadi   reg5   16     // loop count (bit-width)
+
+popLoop:
+    jump   reg5 endLoop   // if reg5==0 → done
+    and    reg3 reg1 reg4 // extract LSB
+    add    reg2 reg2 reg3 // accumulate
+    rotate reg1 1    // rotate right
+    sub    reg5 reg5 reg4 // reg5--
+    jump   reg0 popLoop   // unconditional back
+
+endLoop:
+out    reg2           // print result
+halt

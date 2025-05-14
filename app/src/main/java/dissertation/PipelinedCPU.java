@@ -148,7 +148,6 @@ public class PipelinedCPU {
     }
 
     public void fetch() {
-        //System.out.println("fetching");
         if (haltBus.sample()) {
             if_id.valid = false;
              return;
@@ -249,7 +248,6 @@ public class PipelinedCPU {
         Byte R, S, T;
         switch (opcode) {
         case 0x1: // LOAD  R ← M[XY]
-            System.out.println(imm8);
             R = Byte.hexToByte(nib1);
             raw8 = imm8;
             Word addrWord = new Word(raw8);
@@ -409,17 +407,17 @@ public class PipelinedCPU {
         }
         aluAinBus.drive(aVal);
 
-        // 2) B-input / store-data forwarding (EX/MEM → MEM/WB → RF)
+        //B-input / store-data forwarding (EX/MEM → MEM/WB → RF)
         boolean isStore = id_ex.ctrl.memWrite.byteToHex() == 1;
         int rt       = id_ex.regB.byteToHex();
         Word forwardedB;
-        // first try EX/MEM
+        //first try EX/MEM
         if (ex_mem.valid
             && ex_mem.ctrl.regWrite.byteToHex() == 1
             && ex_mem.dest.byteToHex() == rt) {
             forwardedB = ex_mem.aluOut;
         }
-        // then MEM/WB
+        //then MEM/WB
         else if (mem_wb.valid
                 && mem_wb.ctrl.regWrite.byteToHex() == 1
                 && mem_wb.dest.byteToHex() == rt) {
@@ -427,7 +425,7 @@ public class PipelinedCPU {
                         ? mem_wb.memData
                         : mem_wb.aluOut);
         }
-        // otherwise from the register file
+        //otherwise from the register file
         else {
             src2Mux.update();
             forwardedB = (Word) src2Mux.getOutputBus().sample();
